@@ -67,7 +67,7 @@ public static class GameEndPoints
         });
 
 
-        // PUT game
+        // PUT games/game
         group.MapPut("/{id}", (int id, UpdateGameDto updatedGame) =>
         {
             var index = games.FindIndex(game => game.Id == id);
@@ -83,7 +83,7 @@ public static class GameEndPoints
             return Results.NoContent();
         });
 
-        // DELETE game
+        // DELETE games/game
         group.MapDelete("/{id}", (int id) =>
         {
             games.RemoveAll(game => game.Id == id);
